@@ -1,0 +1,7 @@
+Matricule :
+-----------
+54915 - Yahya OUAMAR
+
+Structure :
+-----------
+QtCreator suivant le modèle "subdir".

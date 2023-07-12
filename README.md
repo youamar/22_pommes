@@ -3,8 +3,35 @@
 
 ## Architecture
 ```
+.
+|-- Makefile
+|-- console
+|   |-- console.pro
+|   `-- main.cpp
+|-- core
+|   |-- array.hpp
+|   `-- core.pro
+|-- defaults.pri
+|-- doc
+|   |-- license.html
+|   `-- mainpage.txt
+|-- gui
+|   |-- gui.pro
+|   |-- main.cpp
+|   |-- mainwindow.cpp
+|   |-- mainwindow.h
+|   `-- mainwindow.ui
+|-- info.txt
+|-- lib
+|-- projet.dox
+`-- tests
+    |-- catch.hpp
+    |-- excpt.cpp
+    |-- main.cpp
+    |-- scenario.cpp
+    |-- simple.cpp
+    `-- tests.pro
 ```
-
 ## Build
 Pour build ce projet, vous devez...
 
