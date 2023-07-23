@@ -44,7 +44,7 @@ PROJECT_NUMBER         =
 # for a project that appears at the top of each page and should give viewer a
 # quick idea about the purpose of the project. Keep the description short.
 
-PROJECT_BRIEF          = "22 pommes est un jeu dont le but est d'être le premier à réunir exactement 11 pommes vertes et 11 pommes rouges dans ses paniers, ou d'obliger son adversaire à dépasser ce nombre."
+PROJECT_BRIEF          = "22 pommes is a game where the goal is to be the first to get exactly 11 green apples and 11 red apples in your baskets, or to force your opponent to exceed this number."
 
 # With the PROJECT_LOGO tag one can specify an logo or icon that is included in
 # the documentation. The maximum height of the logo should not exceed 55 pixels

@@ -11,5 +11,9 @@ CONFIG += console
 LIBS += -L../lib -llibcore \
 
 SOURCES += main.cpp \
+    gameController.cpp \
+    textView.cpp
 
-HEADERS +=
+HEADERS += \
+    gameController.h \
+    textView.h
