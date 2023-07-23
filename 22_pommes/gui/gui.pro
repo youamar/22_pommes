@@ -12,10 +12,14 @@ CONFIG += c++20
 
 SOURCES += \
     main.cpp \
+    ../core/game.cpp \
+    ../core/observable.cpp \
     mainwindow.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    ../core/game.h \
+    ../core/observable.h
 
 FORMS += \
     mainwindow.ui

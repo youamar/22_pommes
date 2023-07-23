@@ -70,6 +70,9 @@ bool Game::isMoveValid(int row, int col) {
  * @param col The column of the target cell.
  */
 void Game::makeMove(int row, int col) {
+    if(!isMoveValid(row, col)) {
+        return; // Do not proceed if move is not valid
+    }
     std::string value = board[row * cols + col];
 
     int oldHarvester = harvester;
@@ -110,7 +113,17 @@ bool Game::checkEndGame() {
     else if ((player1.redApples > 11 || player1.greenApples > 11) || (player2.redApples > 11 || player2.greenApples > 11))
         return true;
 
-    return false;
+    // Check if no more valid moves available
+    for (int row = 0; row < rows; row++) {
+        for (int col = 0; col < cols; col++) {
+            if (isMoveValid(row, col)) {
+                // There is at least one valid move, so the game has not ended
+                return false;
+            }
+        }
+    }
+    // If we reach here, there are no valid moves left, so the game has ended
+    return true;
 }
 
 /**
