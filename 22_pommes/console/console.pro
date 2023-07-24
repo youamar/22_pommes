@@ -8,7 +8,7 @@ include(../defaults.pri)
 TEMPLATE = app
 CONFIG += console
 
-LIBS += -L../lib -llibcore \
+LIBS += -L../lib -lcore \
 
 SOURCES += main.cpp \
     gameController.cpp \

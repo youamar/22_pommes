@@ -25,10 +25,10 @@ SCENARIO("You cannot access an array out of its bounds")
 			THEN("A std::out_of_bound exception is thrown")
 			{
 				REQUIRE_THROWS(a[-1]);
-				REQUIRE_THROWS_AS(a[-1],std::out_of_range);
+                REQUIRE_THROWS_AS(a[-1],std::out_of_range&);
 
 				REQUIRE_THROWS(a[5]);
-				REQUIRE_THROWS_AS(a[5],std::out_of_range);
+                REQUIRE_THROWS_AS(a[5],std::out_of_range&);
 			}
 		}
 	}

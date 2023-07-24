@@ -127,10 +127,10 @@ void MainWindow::nextRound() {
     // update the player's apples count
     const Player& player1 = game.getPlayer1();
     const Player& player2 = game.getPlayer2();
-    ui->player1GreenApplesLabel->setText(QString::number(player1.greenApples));
-    ui->player1RedApplesLabel->setText(QString::number(player1.redApples));
-    ui->player2GreenApplesLabel->setText(QString::number(player2.greenApples));
-    ui->player2RedApplesLabel->setText(QString::number(player2.redApples));
+    ui->player1GreenApplesLabel->setText(QString::number(player1.getGreenApples()));
+    ui->player1RedApplesLabel->setText(QString::number(player1.getRedApples()));
+    ui->player2GreenApplesLabel->setText(QString::number(player2.getGreenApples()));
+    ui->player2RedApplesLabel->setText(QString::number(player2.getRedApples()));
 }
 
 /**
@@ -144,13 +144,13 @@ void MainWindow::checkWinnerAndShowResult() {
     const Player& player1 = game.getPlayer1();
     const Player& player2 = game.getPlayer2();
 
-    int player1Diff = std::abs(player1.redApples - 11) + std::abs(player1.greenApples - 11);
-    int player2Diff = std::abs(player2.redApples - 11) + std::abs(player2.greenApples - 11);
+    int player1Diff = std::abs(player1.getRedApples() - 11) + std::abs(player1.getGreenApples() - 11);
+    int player2Diff = std::abs(player2.getRedApples() - 11) + std::abs(player2.getGreenApples() - 11);
 
     QString message;
-    if (player1.redApples > 11 || player1.greenApples > 11)
+    if (player1.getRedApples() > 11 || player1.getGreenApples() > 11)
         message = "Player 2 wins !";
-    else if (player2.redApples > 11 || player2.greenApples > 11)
+    else if (player2.getRedApples() > 11 || player2.getGreenApples() > 11)
         message = "Player 1 wins !";
     else if (player1Diff < player2Diff)
         message = "Player 1 wins !";

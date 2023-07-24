@@ -113,6 +113,6 @@ void TextView::display() {
     const Player& player1 = game.getPlayer1();
     const Player& player2 = game.getPlayer2();
 
-    std::cout << "Player 1's baskets - Green: " << player1.greenApples << " Red: " << player1.redApples << std::endl;
-    std::cout << "Player 2's baskets - Green: " << player2.greenApples << " Red: " << player2.redApples << std::endl;
+    std::cout << "Player 1's baskets - Green: " << player1.getGreenApples() << " Red: " << player1.getRedApples() << std::endl;
+    std::cout << "Player 2's baskets - Green: " << player2.getGreenApples() << " Red: " << player2.getRedApples() << std::endl;
 }

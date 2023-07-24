@@ -1,7 +1,7 @@
 include(../defaults.pri)
 
 TEMPLATE = lib
-TARGET = libcore
+TARGET = core
 DESTDIR = ../lib
 
 HEADERS += \
@@ -14,4 +14,5 @@ HEADERS += \
 
 SOURCES += \
     game.cpp \
-    observable.cpp
+    observable.cpp \
+    player.cpp

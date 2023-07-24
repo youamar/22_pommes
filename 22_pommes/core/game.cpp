@@ -82,9 +82,9 @@ void Game::makeMove(int row, int col) {
 
     if (value != "X ") {  // Add this check to ensure 'X' is not counted as an apple
         if (value[1] == 'G') {
-            currentPlayer.greenApples += (value[0] - '0');
+            currentPlayer.addGreenApple((value[0] - '0'));
         } else {
-            currentPlayer.redApples += (value[0] - '0');
+            currentPlayer.addRedApple((value[0] - '0'));
         }
     }
 
@@ -107,10 +107,10 @@ void Game::makeMove(int row, int col) {
  */
 bool Game::checkEndGame() {
     // Check if any player has exactly 11 apples of each color
-    if ((player1.redApples == 11 && player1.greenApples == 11) || (player2.redApples == 11 && player2.greenApples == 11))
+    if ((player1.getRedApples() == 11 && player1.getGreenApples() == 11) || (player2.getRedApples() == 11 && player2.getGreenApples() == 11))
         return true;
     // Check if any player has more than 11 apples of one color
-    else if ((player1.redApples > 11 || player1.greenApples > 11) || (player2.redApples > 11 || player2.greenApples > 11))
+    else if ((player1.getRedApples() > 11 || player1.getGreenApples() > 11) || (player2.getRedApples() > 11 || player2.getGreenApples() > 11))
         return true;
 
     // Check if no more valid moves available

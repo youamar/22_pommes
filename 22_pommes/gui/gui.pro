@@ -14,6 +14,7 @@ SOURCES += \
     main.cpp \
     ../core/game.cpp \
     ../core/observable.cpp \
+    ../core/player.cpp \
     mainwindow.cpp
 
 HEADERS += \

@@ -41,8 +41,8 @@ void GameController::play() {
     const Player& player2 = game.getPlayer2();
     std::cout << "\n";
 
-    int player1Diff = std::abs(player1.redApples - 11) + std::abs(player1.greenApples - 11);
-    int player2Diff = std::abs(player2.redApples - 11) + std::abs(player2.greenApples - 11);
+    int player1Diff = std::abs(player1.getRedApples() - 11) + std::abs(player1.getGreenApples() - 11);
+    int player2Diff = std::abs(player2.getRedApples() - 11) + std::abs(player2.getGreenApples() - 11);
 
     if (player1Diff < player2Diff)
         std::cout << "Player 1 wins !\n";
