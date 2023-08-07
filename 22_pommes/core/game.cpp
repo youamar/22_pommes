@@ -60,7 +60,12 @@ bool Game::validMove(int row, int col) {
  * @return false otherwise.
  */
 bool Game::isMoveValid(int row, int col) {
-    return validMove(row, col) && board[row * cols + col] != "X ";
+    int targetCell = row * cols + col;
+    // check if targetCell equals harvester, if true it's not valid
+    if(targetCell == harvester) {
+        return false;
+    }
+    return validMove(row, col) && board[targetCell] != "X ";
 }
 
 /**

@@ -88,6 +88,7 @@ void MainWindow::updateGrid() {
             } else if(cellValue == "H") {
                 backgroundColor = "#D2B48C"; // light brown in hexadecimal
                 cellButton->setStyleSheet("background-color: " + backgroundColor + ";");
+                cellButton->setEnabled(false); // make the "H" cell non-clickable
             } else if(cellValue == "X") {
                 backgroundColor = "transparent"; // make the background disappear
                 cellButton->setEnabled(false); // make the button non-clickable
@@ -178,10 +179,13 @@ void MainWindow::cellClicked(int row, int col) {
     if(game.isMoveValid(row, col)) { // Check if move is valid
         game.makeMove(row, col); // If valid, make the move
         updateGrid(); // Update the grid
-        nextRound(); // Automatically start the next round
-        if(game.checkEndGame()) { // Check if game has ended
-            checkWinnerAndShowResult();
-        }
+        // Call nextRound with a delay
+        QTimer::singleShot(100, [this]() {
+            nextRound(); // Automatically start the next round
+            if(game.checkEndGame()) { // Check if game has ended
+                checkWinnerAndShowResult();
+            }
+        });
     } else {
         ui->statusbar->setStyleSheet("color: red"); // set text color to red
         ui->statusbar->showMessage("Invalid move !"); // display message in the status bar
