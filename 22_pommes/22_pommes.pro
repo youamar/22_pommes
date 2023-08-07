@@ -17,4 +17,4 @@ CONFIG += ordered
 OTHER_FILES += \
     defaults.pri
 
-include(../defaults.pri)
+include(defaults.pri)
